@@ -102,11 +102,15 @@
             </div>
 
             <!-- INICIO MENSAJES -->
-            {% if mensajeActivo %}
-                {% block mensajes %}
-                {% endblock  %}
-            {% else %} 
-                <!-- Posible publicidad -->       
+
+            {% if alertasStatus == True %}
+            <div class="sidebar-card d-none d-lg-flex">
+                <img class="sidebar-card-illustration mb-2" src="{% static 'img/adv.svg' %}" alt="...">
+                <p class="text-center mb-2">A partir de marzo de 2023 el servicio tendra un aumento de 3% segun resulucion ENACOM</p>
+                <a class="btn btn-success btn-sm" href="./informacion/">Mas informacion.</a>
+            </div>
+            {% else %}
+
             {% endif %}
 
             <!-- FIN MENSAJES -->
@@ -246,7 +250,7 @@
 
         <!-- INICIO CONTENIDO -->
 
-        {% if mostrarDashboard %}
+        {% block contenido%}
       
         
         <div class="container-fluid">
@@ -328,7 +332,7 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                     Boton de pago<div>      
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="http://link.com.ar/?abonado=14071"> GENERAR</a></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="http://link.com.ar/?abonado=14071">GENERAR</a></div>
                             </div>
                         </div>
                     </div>
@@ -337,12 +341,6 @@
 
         </div>
     </div>
-    
-    {% else %}
-
-{% endif %}
-
-{% block contenido%}
 
 {% endblock contenido%}
         
