@@ -20,11 +20,4 @@ class Facturas(models.Model):
     pago = models.CharField(max_length=2)
 
     def __str__(self):
-        return f"{self.nAbonado}, {self.apellido.upper()}, {self.nFactura}, {self.monto} , {self.date}"
-
-class Alertas(models.Model):
-    status = models.BooleanField()
-    mensaje = models.CharField(max_length=200)
-
-    def __str__(self):
-        return f"{self.status}, {self.mensaje}"
+        return f"N_Abonado {self.nAbonado}, N_Factura {self.nFactura}, Monto {self.monto} , Fecha {self.date}"
